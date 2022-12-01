@@ -37,7 +37,7 @@ exports.getData = async (req, res, next) => {
 const multerStorage = multer.memoryStorage();
 const multerFilter = (req, file, cb) => {
   console.log(file);
-  if (file.mimetype.startsWith("image") || file.mimetype.startsWith("pdf")) {
+  if (file.mimetype.startsWith("image")) {
     cb(null, true);
   } else {
     cb(null, false);
@@ -49,7 +49,7 @@ const upload = multer({
   fileFilter: multerFilter,
 });
 
-exports.uploadimages = upload.array("image" || "pdf");
+exports.uploadimages = upload.array("image");
 exports.uploadFiles = async (req, res, next) => {
   console.log(req.file);
   let query = [
