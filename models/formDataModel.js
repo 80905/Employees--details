@@ -20,14 +20,24 @@ const userSchema = new mongoose.Schema({
     validate: [validator.isEmail, "Please provide a valid email id!"],
   },
 
-  DateOfBirth: {
+  dateOfBirth: {
     type: Date,
     required: [true, "A user must have a date of birth !"],
   },
 
   addressess: [{}],
-  images: [],
-  pdf: [],
+  images: [
+    {
+      fileName: String,
+      fileType: String,
+    },
+  ],
+  pdf: [
+    {
+      fileName: String,
+      fileType: String,
+    },
+  ],
   createdAT: {
     type: Date,
     default: Date.now(),

@@ -1,10 +1,16 @@
 const express = require("express");
 
-const { userData, getData } = require("../controllers/formDataController");
+const {
+  userData,
+  getData,
+  uploadimages,
+  uploadFiles,
+} = require("../controllers/formDataController");
 
 const router = express.Router();
 
-router.route("/create").post(userData);
-router.route("/get").get(getData);
+router.post("/create", userData);
+router.get("/get", getData);
+router.patch("/upload-files/:id", uploadimages, uploadFiles);
 
 module.exports = router;

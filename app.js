@@ -1,11 +1,11 @@
 const express = require("express");
-const router = require("./routes/formDataRoute");
+// const router = require("./routes/formDataRoute");
 
+const formdataRouter = require("./routes/formDataRoute");
 const app = express();
 
 app.use(express.json());
 
-const formdataRouter = require("./routes/formDataRoute");
-app.use("User", formdataRouter);
+app.use("/user", formdataRouter);
 
 module.exports = app;
