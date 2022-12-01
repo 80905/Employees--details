@@ -49,9 +49,9 @@ const upload = multer({
   fileFilter: multerFilter,
 });
 
-exports.uploadimages = upload.array("image");
+exports.uploadimages = upload.array("image" || "pdf");
 exports.uploadFiles = async (req, res, next) => {
-  const filename = `user-${Date.now()}.jpeg`;
+  console.log(req.file);
   let query = [
     {
       fileType: req.body.fileType,
@@ -63,4 +63,5 @@ exports.uploadFiles = async (req, res, next) => {
     { _id: req.params.id },
     { images: query }
   );
+  res.status(200).json({ uploadImages });
 };
