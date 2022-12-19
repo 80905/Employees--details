@@ -1,5 +1,5 @@
 {
-  "name": "form-data",
+  "name": "employee-details",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -18,10 +18,17 @@
   },
   "homepage": "https://github.com/80905/Form-Data#readme",
   "dependencies": {
+    "aws-sdk": "^2.1277.0",
+    "bcryptjs": "^2.4.3",
+    "crypto": "^1.0.1",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.7.5",
     "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.8.0",
+    "uuid": "^9.0.0",
+    "uuidv4": "^6.2.13",
     "validator": "^13.7.0"
   }
 }
